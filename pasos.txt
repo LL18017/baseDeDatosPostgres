@@ -1,0 +1,79 @@
+necesitas
+*docker
+*netbeans
+*payara 
+- docker compose up
+-abrir localhost:5050
+-agregar nuevo servidor
+    general
+        -hostname:db
+    connection
+        -username:postgres
+        -pasword:tu contr
+-crear database
+    *create => createdatabase => general => parqueo
+databeses=>querytool =>pegarsql=>execute
+
+netbeans
+-databeses
+-new connection
+-driver =>postgres-next
+-database=parqueo
+-password=yu contra
+-next esquema public
+-nombrecualquiera
+
+-crear poroecto mave-javaaplication
+-grupoid cambiar a cualquiera
+
+-buscar pom
+-y agregar etiqueta dependecies y copiar
+    <!-- https://mvnrepository.com/artifact/org.eclipse.persistence/eclipselink -->
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>eclipselink</artifactId>
+            <version>4.0.2</version>
+        </dependency>
+
+-crear folder entity en source
+crear un ner-other-persinatnce-entityclases from data bases
+-database conectio la que creamos -add all -next
+-desmarcar primera opcion -next
+ -collection type - list
+
+ -crear nuevo proyecto llamado parqueoWebAplication
+ -cambiar en el pom/sorces y targets a 17
+ -versio maven 3.2.2
+ -clean and built
+
+ -agregar git y ahcer commit
+
+ -descgar posrd jdbc en C:\payara\payara-6.2023.8\payara6\glassfish\lib
+ -una nueva terminal corrwr asadmin 
+*./asadmin create-jdbc-connection-pool --datasourceclassname org.postgresql.ds.PGSimpleDataSource --restype javax.sql.DataSource --property user=postgres:password=3211:servername=localhost:portnumber=5432:databasename=parqueo pool_parqueo
+*./asadmin ping-connection-pool pool_parqueo
+
+ *.\asadmin create-jdbc-resource --connectionpoolid pool_parqueo jdbc/pgdb
+ * .\asadmin stop-domain
+
+ -crear branch en git
+
+ -crear un nuevo folder con parent folder webapp llamado entity y copiar ahi todas las entityes de primer proyecto
+
+ -new other persitence UNITPERSITICA 
+
+ -nombrar parqueo parqueoPU Y DATA SOURCE JDBC/PGDB OPCION NONE
+
+ -COMPILAR
+
+ -crear folder  parent folder webapp llamado control y java class tipoEspacioBean
+ -decorar con staless y localbean
+ -implementar serializable
+
+
+ -a la clase bean click izquierdo tools create/update test 
+ -selecionar integracuion test 
+ -marcar default metods
+ -javadoc
+ 
+
